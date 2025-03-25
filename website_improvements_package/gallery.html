@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - CB Swartz Art</title>
+    <meta name="description" content="Browse the art gallery of CB Swartz featuring charcoal portraits and original digital prints. Discover unique artwork for your home or office.">
+    <link rel="canonical" href="https://cbswartzart.com/gallery">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">CB Swartz Art</h1>
+            <p class="site-tagline">Custom Portraits & Original Digital Prints</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="container">
+            <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="charcoal-portraits.html">Charcoal Portraits</a></li>
+                <li><a href="custom-pricing.html">Custom Portrait Pricing</a></li>
+                <li><a href="digital-prints.html">Digital Print Info</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Art Gallery</h2>
+            <p>Browse through my collection of artwork</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-filters">
+                <button class="filter-button active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="charcoal">Charcoal Portraits</button>
+                <button class="filter-button" data-filter="digital">Digital Art</button>
+                <button class="filter-button" data-filter="prints">Fine Art Prints</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery items will be dynamically loaded or added here -->
+                <div class="gallery-item" data-category="charcoal">
+                    <img src="images/portrait1.jpg" alt="Custom charcoal portrait of a dog wearing a hat" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Custom Pet Portrait</h3>
+                        <p>Charcoal on paper, 11x14"</p>
+                        <a href="#" class="button small">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="digital">
+                    <img src="images/digital1.jpg" alt="Digital artwork of a fantasy scene" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Fantasy Landscape</h3>
+                        <p>Digital illustration</p>
+                        <a href="#" class="button small">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="prints">
+                    <img src="images/print1.jpg" alt="Fine art print of a landscape" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Mountain Sunset</h3>
+                        <p>Limited edition print, 16x20"</p>
+                        <a href="#" class="button small">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- More gallery items would be added here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Commission Your Custom Artwork?</h2>
+            <p>Contact me today to discuss your vision and bring your ideas to life.</p>
+            <a href="contact.html" class="button large">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>CB Swartz Art</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="charcoal-portraits.html">Charcoal Portraits</a>
+                    <a href="custom-pricing.html">Custom Portrait Pricing</a>
+                    <a href="digital-prints.html">Digital Prints</a>
+                    <a href="store.html">Store</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-contact">
+                    <p>Phone: 1-220-207-6522</p>
+                    <p>Email: cbswartz21@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2024 CB Swartz Art - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="responsive.js"></script>
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

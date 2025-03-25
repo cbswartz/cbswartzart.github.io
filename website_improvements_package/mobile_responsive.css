@@ -1,0 +1,221 @@
+/* Mobile Responsiveness Improvements for CB Swartz Art Website */
+
+/* Ensure viewport meta tag is present in all pages */
+/* Add to <head> section: <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* Responsive navigation for all pages */
+@media screen and (max-width: 768px) {
+  /* Navigation adjustments */
+  .main-navigation .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-menu.active {
+    display: block;
+  }
+  
+  .nav-menu li {
+    display: block;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px;
+  }
+  
+  /* Content adjustments */
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  /* Gallery page adjustments */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Product page adjustments */
+  .product-details {
+    flex-direction: column;
+  }
+  
+  .product-images {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .product-info {
+    width: 100%;
+  }
+  
+  /* Contact form adjustments */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+  }
+  
+  /* Footer adjustments */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  /* Further reduce font sizes */
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Single column galleries */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Adjust buttons for smaller screens */
+  .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Adjust spacing */
+  section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    margin-bottom: 25px;
+  }
+  
+  /* Simplify complex layouts */
+  .services-grid,
+  .testimonial-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet devices */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* Adjust gallery for tablets */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Adjust services for tablets */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ensure images are responsive across all pages */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive tables */
+@media screen and (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Touch-friendly interactive elements */
+@media (hover: none) {
+  /* Enhance tap targets for touch devices */
+  .nav-menu a,
+  .button,
+  .gallery-item,
+  .social-links a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Adjust hover states for touch */
+  .gallery-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header,
+  .main-navigation,
+  .site-footer,
+  .cta,
+  .button {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+}

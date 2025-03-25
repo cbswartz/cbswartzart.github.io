@@ -1,0 +1,239 @@
+/* Additional SEO Styles and Optimizations for CB Swartz Art Website */
+
+/* Semantic HTML structure enhancement */
+/* These styles help ensure proper heading hierarchy and semantic structure */
+
+/* Ensure proper heading hierarchy */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1em 0 0.5em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 1em 0 0.5em;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin: 1em 0 0.5em;
+}
+
+/* Improve accessibility */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard navigation */
+.skip-link {
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 700;
+  left: 50%;
+  padding: 10px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
+/* Structured data styling (for visual elements that correspond to schema.org markup) */
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "›";
+  margin: 0 0.5em;
+}
+
+/* Styling for article metadata */
+.article-meta {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+
+.article-meta .author, 
+.article-meta .date, 
+.article-meta .category {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+/* Styling for review schema elements */
+.review {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  margin-bottom: 2em;
+  padding: 1.5em;
+}
+
+.review-rating {
+  color: gold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+.review-author {
+  font-style: italic;
+  margin-top: 1em;
+}
+
+/* Styling for product schema elements */
+.product {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 1fr;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 768px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-price {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.5em 0;
+}
+
+.product-availability {
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+
+/* Styling for FAQ schema elements */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.faq-item h4 {
+  cursor: pointer;
+  margin: 0 0 0.5em;
+  position: relative;
+}
+
+.faq-item h4::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq-item.active h4::after {
+  content: "-";
+}
+
+.faq-item p {
+  margin: 0;
+}
+
+/* Styling for local business schema elements */
+.business-info {
+  margin-bottom: 2em;
+}
+
+.business-hours {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.business-hours li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.business-map {
+  height: 300px;
+  margin-top: 1em;
+  width: 100%;
+}
+
+/* Styling for event schema elements */
+.event {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  margin-bottom: 2em;
+  padding: 1.5em;
+}
+
+.event-date {
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.event-location {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+/* Responsive adjustments for SEO elements */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    font-size: 0.9rem;
+  }
+  
+  .article-meta {
+    font-size: 0.8rem;
+  }
+  
+  .product-price {
+    font-size: 1.3rem;
+  }
+}
+
+/* Print styles for SEO elements */
+@media print {
+  .breadcrumbs, 
+  .article-meta, 
+  .product-details, 
+  .faq-item, 
+  .business-info {
+    color: black;
+  }
+}
