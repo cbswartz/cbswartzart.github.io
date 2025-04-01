@@ -309,6 +309,49 @@ section {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Video Types Section */
+.video-types {
+    padding: 60px 0;
+    background-color: rgba(44, 62, 80, 0.1);
+}
+
+.video-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.video-type-card {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.video-type-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.video-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.video-type-card h4 {
+    font-family: var(--header-font);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .video-types {
+        padding: 40px 0;
+    }
+}
 /* Testimonials section */
 .testimonials {
   background-color: var(--secondary-color);
