@@ -83,7 +83,19 @@ body {
   background-color: var(--accent-color);
   color: white;
 }
+.nav-menu .button.tertiary {
+    margin-left: 15px; /* Space from regular links */
+    padding: 8px 16px; /* Smaller than hero buttons */
+}
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-menu .button.tertiary {
+        margin: 10px auto;
+        display: block;
+        width: 80%;
+    }
+}
 /* Container for layout */
 .container {
   width: 90%;
