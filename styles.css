@@ -155,7 +155,15 @@ section {
   background-color: var(--accent-color);
   color: white;
 }
+.button.tertiary {
+  background-color: #8e44ad; /* Purple accent - change to match your palette */
+  color: white;
+}
 
+.button.tertiary:hover {
+  background-color: #732d91; /* Darker purple */
+  transform: translateY(-2px);
+}
 /* Hero section styling */
 .hero {
   position: relative;
